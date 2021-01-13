@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>site</title>
+</head>
+
+<body>
+    <!-- <div class="header">
+        <ul>
+            <li><a href="#konoha">Коноха</a></li>
+        </ul>
+    </div>  -->
+    <div id="people">
+        <div class="person" v-for="(result,index) in results">
+            <a href="#">
+                <img :src="result.avatar" v-bind:alt="results">
+                <p> Rank: {{ result.rank }} </p>
+                <p> Name: {{ result.first_name }} {{ result.last_name }} </p>
+            </a>
+            <input v-on:click="del(index)" type="button" value="delete" class="btn">
+        </div>
+
+
+    <div class="container">
+        <!-- <a href="/" class="logo">Konoha</a> -->
+        <nav>
+            <ul>
+                <li><a href=" ">Учиха</a></li>
+                <li><a href=" ">Сенджу</a></li>
+                <li><a href=" ">Оцуцуки</a></li>
+            </ul>
+        </nav>
+      </div>
+
+
+    <div class="block">
+        <form id="form">
+            <!-- <label for="rank">Звание</label><input id="rank" type="text" class="menu" placeholder="Каге" v-model="rank" required><span></span><br>
+            <label for="name">Имя</label><input id="name" type="text" class="menu" placeholder="Наруто" v-model="name" required><span></span><br>
+            <label for="surname">Клан</label><input id="surname" type="text" class="menu" placeholder="Узумаке" v-model="surname" required><span></span><br>
+            <label for="image">Ссылка на картинку</label><input id="image" type="url" class="menu" placeholder="https://e1.pngegg.com/pngimages/930/839/png-clipart-render-naruto-uzumaki-naruto.png"  v-model="image" required><span></span><br> -->
+            <!-- <label for="password">Пароль</label><input id="password"  type="password" class="menu" pattern=".{5,}" required placeholder="Введите пароль"><span></span><br>
+            <label for="password">Повторите</label><input ud="password" type="password" class="menu" placeholder="Повторите пароль" required pattern=".{5,}"><span></span><br> -->
+            <p>Name:</p>
+            <input v-model="n_object.first_name" placeholder=" ">
+
+            <p>Surname:</p> 
+            <input v-model="n_object.last_name" placeholder=" ">
+
+            <p>Rank:</p>
+            <input v-model="n_object.rank" placeholder=" ">
+
+            <p>Image:</p>
+            <input v-model="n_object.avatar" placeholder=" ">
+            
+            <button v-on:click="postttt">click</button>
+        </form>
+        
+
+        <!-- <div class="button" v-on:click="">
+            <label class="qwe"><input id="button" form="form" type="submit">Добавить игрока</label>
+        </div> -->
+    </div>
+</div>
+    <script src="java.js"></script>
+</body>
+
+</html>
