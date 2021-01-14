@@ -8,16 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"</script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>site</title>
 </head>
 
 <body>
-    <!-- <div class="header">
-        <ul>
-            <li><a href="#konoha">Коноха</a></li>
-        </ul>
-    </div>  -->
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="https://naruto.fandom.com/ru/wiki/%D0%9A%D0%BB%D0%B0%D0%BD_%D0%A3%D1%87%D0%B8%D1%85%D0%B0">Учиха</a></li>
+                <li><a href="https://naruto.fandom.com/ru/wiki/%D0%9A%D0%BB%D0%B0%D0%BD_%D0%A1%D0%B5%D0%BD%D0%B4%D0%B6%D1%83">Сенджу</a></li>
+                <li><a href="https://naruto.fandom.com/ru/wiki/%D0%9A%D0%BB%D0%B0%D0%BD_%D0%9E%D0%BE%D1%86%D1%83%D1%86%D1%83%D0%BA%D0%B8">Оцуцуки</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div id="people">
         <div class="person" v-for="(result,index) in results">
             <a href="#">
@@ -28,27 +35,41 @@
             <input v-on:click="del(index)" type="button" value="delete" class="btn">
         </div>
 
+    <div class="sezon">
+        <table id="sborder"> 
+            <tr>
+                <th> Список серии </th>
+            </tr>
 
-    <div class="container">
-        <!-- <a href="/" class="logo">Konoha</a> -->
-        <nav>
-            <ul>
-                <li><a href=" ">Учиха</a></li>
-                <li><a href=" ">Сенджу</a></li>
-                <li><a href=" ">Оцуцуки</a></li>
-            </ul>
-        </nav>
-      </div>
+            <tr>
+                <td> Сезон 1 - 220 серии </td>
+            </tr>
 
+            <tr>
+                <td> Сезон 2 - 500 серии </td>
+            </tr>
+
+            <tr>
+                <td> Сезон 3 - 181 серии  </td>
+            </tr>
+
+            <tr>
+                <td> Фильмы - 11 фильмов </td>
+            </tr>
+
+            <tr>
+                <td> OVA - 35 OVA </td>
+            </tr>
+
+            <tr>
+                <td> Чиби - 51 серия </td>
+            </tr>
+          </table>
+         
+    </div>
 
     <div class="block">
         <form id="form">
-            <!-- <label for="rank">Звание</label><input id="rank" type="text" class="menu" placeholder="Каге" v-model="rank" required><span></span><br>
-            <label for="name">Имя</label><input id="name" type="text" class="menu" placeholder="Наруто" v-model="name" required><span></span><br>
-            <label for="surname">Клан</label><input id="surname" type="text" class="menu" placeholder="Узумаке" v-model="surname" required><span></span><br>
-            <label for="image">Ссылка на картинку</label><input id="image" type="url" class="menu" placeholder="https://e1.pngegg.com/pngimages/930/839/png-clipart-render-naruto-uzumaki-naruto.png"  v-model="image" required><span></span><br> -->
-            <!-- <label for="password">Пароль</label><input id="password"  type="password" class="menu" pattern=".{5,}" required placeholder="Введите пароль"><span></span><br>
-            <label for="password">Повторите</label><input ud="password" type="password" class="menu" placeholder="Повторите пароль" required pattern=".{5,}"><span></span><br> -->
             <p>Name:</p>
             <input v-model="n_object.first_name" placeholder=" ">
 
@@ -60,8 +81,10 @@
 
             <p>Image:</p>
             <input v-model="n_object.avatar" placeholder=" ">
+            <div>
+                <button v-on:click="postttt">click</button>
+            </div>
             
-            <button v-on:click="postttt">click</button>
         </form>
         
 
