@@ -6,8 +6,8 @@ const vm = new Vue({
         n_object: {
             first_name: null,
             last_name: null,
-            rank: null, 
             avatar: null,
+            wiki: null
         },
     },
     mounted() {
@@ -24,14 +24,28 @@ const vm = new Vue({
             await axios.delete("http://localhost:3000/users/" + id)
         },
         async postttt(){
-            //alert(this.n_object.first_name)
-            //alert(this.n_object.last_name)
-            //alert(this.n_object.rank)
-            //alert(this.n_object.avatar)
-            //let obj = JSON.stringify(n_object)
             axios.post(url,this.n_object).then(res => {
                 console.log(res);
             })
-        }
+        },
+        async putRequest(index) {
+            let id = this.results[index].id;
+            var parentDOM = document.getElementById("main_block");
+            let inputs = parentDOM.children[index].getElementsByClassName("change_form")[0].getElementsByTagName("input");
+            var tempObj = {
+                first_name: inputs[0].value,
+                last_name: inputs[1].value,
+                avatar: inputs[2].value,
+                wiki: inputs[3].value
+            };
+            await axios.put(url + "/" + id, tempObj)
+            .then(res => {
+                alert("Вы изменили информацию. ПОЗДРАВЛЯЕМ!")
+                location.reload();
+            })
+            .catch(function (error) {
+                alert(error);
+            });
+        },
     }
 });

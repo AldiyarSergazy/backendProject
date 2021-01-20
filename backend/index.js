@@ -12,10 +12,10 @@ const sequelize = new Sequelize("sqlite:./main.db", {
 
 class User extends Model {}
 User.init({
-    rank: DataTypes.STRING,
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
-    avatar: DataTypes.STRING
+    avatar: DataTypes.STRING,
+    wiki: DataTypes.STRING
 }, { sequelize, modelName: "Users" });
 
 
@@ -36,10 +36,10 @@ const port = 3000;
         console.log(req);
         if (true) {
             const user = await User.create({
-                rank: req.body.rank,
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
-                avatar: req.body.avatar
+                avatar: req.body.avatar, 
+                wiki: req.body.wiki
             });
         }
         res.status(201).send('{"code":201}');
@@ -67,6 +67,23 @@ const port = 3000;
         await user.destroy()
         res.status(200).send({ msg: "User was deleted" })
     });
+
+    app.put('/users/:id', async(req,res) => {
+        user = await User.findByPk(req.params.id)
+        if (user === null) {
+            return res.status(404).send({ msg: "Not found" })
+        }
+        var body = req.body
+        if(body.first_name == '' || body.last_name == '' || body.avatar == '' || body.wiki == '') {
+            return res.status(400).send({ msg: "Incorrect request" })
+        }
+        if(body.first_name!= "") user.first_name = body.first_name
+        if(body.last_name!= "") user.last_name = body.last_name
+        if(body.avatar!= "") user.avatar = body.avatar
+        if(body.wiki!= "") user.wiki = body.wiki
+        await user.save()
+        res.status(200).send({ msg: "User was updated" })
+    })
 
 })();
 
