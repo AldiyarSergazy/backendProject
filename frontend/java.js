@@ -30,7 +30,7 @@ const vm = new Vue({
         },
         async putRequest(index) {
             let id = this.results[index].id;
-            var parentDOM = document.getElementById("main_block");
+            var parentDOM = document.getElementById("people");
             let inputs = parentDOM.children[index].getElementsByClassName("change_form")[0].getElementsByTagName("input");
             var tempObj = {
                 first_name: inputs[0].value,
@@ -38,6 +38,7 @@ const vm = new Vue({
                 avatar: inputs[2].value,
                 wiki: inputs[3].value
             };
+            console.log(tempObj)
             await axios.put(url + "/" + id, tempObj)
             .then(res => {
                 alert("Вы изменили информацию. ПОЗДРАВЛЯЕМ!")

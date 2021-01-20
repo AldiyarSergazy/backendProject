@@ -70,6 +70,7 @@ const port = 3000;
 
     app.put('/users/:id', async(req,res) => {
         user = await User.findByPk(req.params.id)
+        console.log(user.body)
         if (user === null) {
             return res.status(404).send({ msg: "Not found" })
         }
