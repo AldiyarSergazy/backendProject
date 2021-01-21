@@ -16,6 +16,8 @@ body {
 img {
     width: 70%;
     height: 70%;
+    border-radius: 15%;
+    border: black solid 3px;
 }
 
 .person {
@@ -23,17 +25,19 @@ img {
     text-align: center;
     min-width: 260px;
     width: 25%;
-    margin: 30px ;
+    margin: 60px ;
     padding: 10px 0;
 }
 
 .person img:hover {
     transform: scale(1.1);
+    border-radius: 15%
 }
 
 .person a {
     text-decoration: none;
     color: black;
+    margin: 60px auto 0;
 }
 
 .logo {
@@ -51,7 +55,7 @@ img {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(3, 190, 3);
     justify-content: space-around;
 }
   nav li {
@@ -82,14 +86,14 @@ img {
 
 #form {
     text-align: center;
-    border: 3px solid green;
+    border: 3px solid rgb(3, 190, 3);
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 3%;
 }
 
 .block {
-    height: 282px;
+    height: 300px;
     width: 100%;
     margin: 40px auto 0;
     background-color: gray;
@@ -109,41 +113,104 @@ label {
     position: relative;
     width: 100px;
 }
-
-/* .sezon {  
-    height: 173px;
-    width: 231px;
-    margin: 40px auto 0;
-    background-color: gray;
-    border-radius: 3%;
-    position: fixed;
-    right: 3% ;
-    top: 46%;
-}
-
-#sborder{
-    height: 167px;
-    width: 233px;
-    text-align: center;
-    border: 3px solid green;
-    position: fixed;
-    right: 4.5% ;
-    top: 50%;
-    padding: 15px;
-    margin-bottom: 15px;
-} */
-
-b{
-    margin: 15px auto 0;
-    background: white; /* Цвет фона под заголовком */
-    color: black; /* Цвет текста */
-    padding: 5px; /* Поля вокруг текста */
-}
 .btn {
     background: white; /* Цвет фона под заголовком */
     color: black; /* Цвет текста */
     padding: 5px; 
     display: block;
     margin: 15px auto;
+}
+.card {
+    color: rgb(3, 190, 3);
+    opacity: 0;
+
+}
+.change_form {
+    margin: 15px 0;
+}
+.change_form input {
+    margin-bottom: 5px;
+}
+
+.button {
+    margin: 15px;
+    display: inline-block;
+    color: black;
+    font-size: 100%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 7px;
+    background: rgb(3, 190, 3) linear-gradient(rgb(0, 158, 8), rgb(114, 255, 109));
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0), inset 0 1px 2px rgba(0,0,0,0), inset 0 0 0 60px rgba(255,255,0,0);
+    transition: box-shadow .2s, border-color .2s;
+}
     
+  .button:hover  {
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0), inset 0 1px 2px rgba(0,0,0,0), inset 0 0 0 60px rgba(255,255,0,.5);
+  }
+  .button:active  {
+    padding: calc(.25em + 1px) .5em calc(.25em - 1px);
+    border-color: rgb(0, 0, 0);
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 2px rgba(0,0,0,.3), inset 0 0 0 60px rgba(255,255,0,.45);
+  }
+
+
+
+.person p {
+    margin: 20px auto 0;
+    background: white; /* Цвет фона под заголовком */
+    color: black; /* Цвет текста */
+    padding: 5px; /* Поля вокруг текста */
+    width: fit-content;
+}
+.buttomClick {
+    position: relative;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 700;
+    color: rgb(209,209,217);
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 3px;
+    background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0,1,6,.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+.buttomClick:hover:not(:active) {
+    background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+}
+.buttomClick:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+     0 0 1px rgba(0,0,0,.5) inset,
+     0 2px 3px rgba(0,0,0,.5) inset,
+     0 1px 1px rgba(255,255,255,.1);
+}
+.nameColor{
+    position: relative;
+    display: inline-block;
+    font-size: 110%;
+    font-weight: 700;
+    color: rgb(209,209,217);
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 3px;
+    background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0,1,6,.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
 }

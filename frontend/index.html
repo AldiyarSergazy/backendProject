@@ -33,47 +33,44 @@
     <div id="people">
         <div class="person" v-for="(result,index) in results">
             <a :href="result.wiki" v-bind:alt="results">
-                <img :src="result.avatar" v-bind:alt="results"><br>
-                <b>{{ result.first_name }} {{ result.last_name }}</b>
+                <img :src="result.avatar" v-bind:alt="results">
+                <p class="nameColor">{{ result.first_name }} {{ result.last_name }}</p><br>
             </a>
-            <div>
-
+            <button class="button" v-on:click="showForm(index)">show</button>
+            <button class="button" v-on:click="del(index)">delete</button>
+            <div class="card">
                 <form class="change_form">
                     <input type="text" :value="result.first_name"><br>
                     <input type="text" placeholder="Новая фамилия" :value="result.last_name"><br>
                     <input type="text" placeholder="Новая ссылка на картинку" :value="result.avatar"><br>
                     <input type="url" placeholder="Новая ссылка на страницу" :value="result.wiki"><br>
-                </form>
-
-                <button class="button" form="change_form" @click="putRequest(index)">Accept</button>
+                    <button class="button" form="change_form" @click="putRequest(index)">change</button>
             </div>
-            <button v-on:click="del(index)">delete</button>
-            <!-- <input v-on:click="del(index)" type="button" value="delete" class="btn"> -->
-        </div>
-
-
-        <div class="block">
-            <form id="form">
-                <p>Name:</p>
-                <input v-model="n_object.first_name" placeholder=" ">
-
-                <p>Surname:</p>
-                <input v-model="n_object.last_name" placeholder=" ">
-
-                <p>Image:</p>
-                <input v-model="n_object.avatar" placeholder=" ">
-
-                <p>Wiki:</p>
-                <input v-model="n_object.wiki" placeholder=" ">
-
-
-
-                <div>
-                    <button v-on:click="postttt">click</button>
-                </div>
-
             </form>
+
         </div>
+
+    </div>
+
+
+    <div class="block">
+        <form id="form">
+            <p>Name:</p>
+            <input v-model="n_object.first_name" placeholder=" ">
+
+            <p>Surname:</p>
+            <input v-model="n_object.last_name" placeholder=" ">
+
+            <p>Image:</p>
+            <input v-model="n_object.avatar" placeholder=" ">
+
+            <p>Wiki:</p>
+            <input v-model="n_object.wiki" placeholder=" ">
+            <div>
+                <button v-on:click="postttt">click</button>
+            </div>
+        </form>
+    </div>
     </div>
     <script src="java.js"></script>
 </body>
